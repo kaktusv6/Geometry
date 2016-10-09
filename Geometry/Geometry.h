@@ -5,6 +5,7 @@
 #ifndef LAB1BASEGEOMETRY_GEOMETRY_H
 #define LAB1BASEGEOMETRY_GEOMETRY_H
 
+#include "Vector.h"
 #include "Point.h"
 
 
