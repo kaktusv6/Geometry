@@ -19,6 +19,7 @@ public:
 	double operator[] (int);
 
 	double angle();
+	double length();
 };
 
 template<int Size>
@@ -34,6 +35,11 @@ template<int Size>
 double Vector<Size>::angle() {
 	return std::acos(cmoponents[0] / std::sqrt((*this) * (*this)));
 }
+template<int Size>
+double Vector<Size>::length() {
+	return std::sqrt((*this) * (*this));
+}
+
 
 template<int Size>
 double angleBeetwenVectors(Vector<Size> a, Vector<Size> b) {
