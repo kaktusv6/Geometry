@@ -5,6 +5,8 @@
 #ifndef LAB1BASEGEOMETRY_POINT_H
 #define LAB1BASEGEOMETRY_POINT_H
 
+#include <iostream>
+
 template<int Size>
 class Point {
 	double components[Size];
@@ -13,6 +15,14 @@ public:
 	Point(double);
 
 	double operator[](int);
+
+	class ExeptionOutOfRang {
+	public:
+		ExeptionOutOfRang() {}
+		void why() {
+			std::cout << "Out of range" << std::endl;
+		}
+	};
 };
 
 /* --------------- Methods of Points --------------- */
