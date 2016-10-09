@@ -5,13 +5,7 @@
 #ifndef LAB1BASEGEOMETRY_GEOMETRY_H
 #define LAB1BASEGEOMETRY_GEOMETRY_H
 
-
-
-template<int Size>
-class Vector
-{
-	double components[Size];
-};
+#include "Point.h"
 
 
 #endif //LAB1BASEGEOMETRY_GEOMETRY_H
