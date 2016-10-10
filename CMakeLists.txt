@@ -6,5 +6,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES main.cpp
         Geometry/Geometry.h
         Geometry/Point.h
-        Geometry/Vector.h Geometry/Line.h)
+        Geometry/Vector.h Geometry/Line.h Geometry/Sphere.h)
 add_executable(Lab1BaseGeometry ${SOURCE_FILES})
