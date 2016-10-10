@@ -25,7 +25,7 @@ public:
 	};
 };
 
-/* --------------- Methods of Points --------------- */
+/* --------------- Methods and Operators of Points --------------- */
 
 template<int Size>
 Point<Size>::Point(double _default) {
@@ -35,13 +35,19 @@ Point<Size>::Point(double _default) {
 }
 template<int Size>
 double Point<Size>::operator[](int index) {
-	if (0 > index || index >= Size) {
-		throw;
+	try {
+		if (0 > index || index >= Size) {
+			throw ExeptionOutOfRang();
+		}
 	}
+	catch (ExeptionOutOfRang e) {
+		e.why();
+	}
+
 	return components[index];
 }
 
-/* --------------- Operators of Points --------------- */
+/* --------------- Operators --------------- */
 
 template<int Size>
 Point<Size> operator+(Point<Size> a, Point<Size> b) {
@@ -49,7 +55,30 @@ Point<Size> operator+(Point<Size> a, Point<Size> b) {
 	for(int i = 0; i < Size; i++){
 		c[i] = a[i] + b[i];
 	}
+	return c;
 }
-
-
+template<int Size>
+Vector<Size> operator-(Point<Size> a, Point<Size> b) {
+	Vector<Size> c;
+	for(int i = 0; i < Size; i++){
+		c[i] = a[i] - b[i];
+	}
+	return c;
+}
+template<int Size>
+Point<Size> operator+(Point<Size> a, Vector<Size> b) {
+	Point<Size> c;
+	for(int i = 0; i < Size; i++){
+		c[i] = a[i] + b[i];
+	}
+	return c;
+}
+template<int Size>
+Point<Size> operator-(Point<Size> a, Vector<Size> b) {
+	Point<Size> c;
+	for(int i = 0; i < Size; i++){
+		c[i] = a[i] - b[i];
+	}
+	return c;
+}
 #endif //LAB1BASEGEOMETRY_POINT_H
