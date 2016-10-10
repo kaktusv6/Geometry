@@ -33,30 +33,7 @@ public:
 	};
 };
 
-template<int Size>
-Vector<Size> operator+(Vector<Size> a, Vector<Size> b) {
-	Vector<Size> c;
-	for(int i = 0; i < Size; i++){
-		c[i] = a[i] + b[i];
-	}
-	return c;
-}
-template<int Size>
-Vector<Size> operator-(Vector<Size> a, Vector<Size> b) {
-	Vector<Size> c;
-	for(int i = 0; i < Size; i++){
-		c[i] = a[i] - b[i];
-	}
-	return c;
-}
-template<int Size>
-double operator* (Vector<Size> a, Vector<Size> b) {
-	double s = 0;
-	for(int i = 0; i < Size; i++){
-		s += a[i]*b[i];
-	}
-	return s;
-}
+/* --------------- Methods and Operators of Vector --------------- */
 
 template<int Size>
 double Vector<Size>::operator[] (int index) {
@@ -81,9 +58,35 @@ double Vector<Size>::length() {
 	return std::sqrt((*this) * (*this));
 }
 
+/* --------------- Operators and Methods --------------- */
+
 template<int Size>
 double angleBeetwenVectors(Vector<Size> a, Vector<Size> b) {
 	return std::abs(a.angle() - b.angle());
+}
+template<int Size>
+Vector<Size> operator+(Vector<Size> a, Vector<Size> b) {
+	Vector<Size> c;
+	for(int i = 0; i < Size; i++){
+		c[i] = a[i] + b[i];
+	}
+	return c;
+}
+template<int Size>
+Vector<Size> operator-(Vector<Size> a, Vector<Size> b) {
+	Vector<Size> c;
+	for(int i = 0; i < Size; i++){
+		c[i] = a[i] - b[i];
+	}
+	return c;
+}
+template<int Size>
+double operator* (Vector<Size> a, Vector<Size> b) {
+	double s = 0;
+	for(int i = 0; i < Size; i++){
+		s += a[i]*b[i];
+	}
+	return s;
 }
 
 #endif //LAB1BASEGEOMETRY_VECTOR_H
