@@ -31,6 +31,8 @@ public:
 			std::cout << "Out of range" << std::endl;
 		}
 	};
+
+	~Vector() {}
 };
 
 /* --------------- Methods and Operators of Vector --------------- */

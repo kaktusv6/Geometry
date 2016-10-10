@@ -23,6 +23,8 @@ public:
 			std::cout << "Out of range" << std::endl;
 		}
 	};
+
+	~Point() {}
 };
 
 /* --------------- Methods and Operators of Points --------------- */
